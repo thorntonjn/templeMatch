@@ -1,14 +1,15 @@
 {
   "name": "nowjs-temple-match",
-  "version": "0.0.2",
-  "author": { "name": "Joel Thornton",
-    "email":"thorntonjn@familysearch.org"
+  "version": "0.0.2-2",
+  "author": {
+    "name": "Joel Thornton",
+    "email": "thorntonjn@familysearch.org"
   },
   "description": "thorntonjn@familysearch.org",
-  "main":"",
+  "main": "",
   "repository": {
-    "type":"git",
-    "url":"https://github.com/thorntonjn/templeMatch.git"
+    "type": "git",
+    "url": "https://github.com/thorntonjn/templeMatch.git"
   },
   "keywords": [
     "nowjs",
@@ -17,21 +18,25 @@
   ],
   "homepage": "https://github.com/thorntonjn/templeMatch",
   "scripts": {
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "contributors": [
     {
       "name": "Joel Thornton",
       "email": "thorntonjn@familysearch.org"
-    }],
-  "dependencies" : {
-    "now"     :  "0.7.x",
-    "express" :  "2.4.x",
-    "ejs"     :  "0.5.x"
+    }
+  ],
+  "dependencies": {
+    "now": "0.7.x",
+    "express": "2.4.x",
+    "ejs": "0.5.x"
   },
   "engine": {
     "node": ">=0.4"
   },
   "analyze": false,
-  "subdomain": "thorntonjn_now_temple_match"
-} 
+  "subdomain": "thorntonjn_now_temple_match",
+  "engines": {
+    "node": "0.8.x"
+  }
+}
