@@ -40,7 +40,7 @@ app.get('/play', function(req, res){
 });
 
 app.listen(3001);
-console.log("Express server listening on port %d", app.address().port);
+// console.log("Express server listening on port %d", app.address().port);
 
 // Default values for temple data
 var temples = [
