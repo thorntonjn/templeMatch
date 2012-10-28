@@ -8,14 +8,14 @@
   "main":"",
   "repository": {
     "type":"git",
-    "url":""
+    "url":"https://github.com/thorntonjn/templeMatch.git"
   },
   "keywords": [
     "nowjs",
     "express",
     "example"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/thorntonjn/templeMatch",
   "scripts": {
     "start":"node app.js"
   },
