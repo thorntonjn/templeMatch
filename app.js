@@ -43,7 +43,7 @@ app.listen(3001);
 // console.log("Express server listening on port %d", app.address().port);
 
 // Default values for temple data
-var temples = [
+var templeData = [
   {name:'Aba Nigeria', image:'images/aba-nigeria-214x128-050816_jrn013.jpg', status:'UNIDENTIFIED'},
   {name:'Accra Ghana', image:'images/accra-ghana-214x128-050816_jrn009.jpg', status:'UNIDENTIFIED'},
   {name:'Adelaide Australia', image: 'images/adelaide-australia-214x128-CWD_bac3d5b5.jpg', status:'UNIDENTIFIED'},
@@ -199,17 +199,37 @@ var temples = [
 
 ];
 
-// the index provides direct access without looping through the array to find a temple
-for (var i=0; i < temples.length; i++) {
-  temples[i].index = i;
+var temples = [];
+
+
+var initTemples = function () {
+  temples = [];
+
+  // the index provides direct access without looping through the array to find a temple
+  for (var i=0; i < templeData.length; i++) {
+    temples[i] = {}
+    temples[i].index = i;
+    temples[i].name = templeData[i].name;
+    temples[i].image = templeData[i].image;
+    temples[i].status = templeData[i].status;
+  }
 }
 
 var scores = {};
+
+var initScores = function () {
+  for (key in scores) {
+    scores[key].count = 0;
+  }
+}
 
 
 // NowJS components #########################################################
 var nowjs = require("now");
 var everyone = nowjs.initialize(app);
+
+initTemples();
+initScores();
 
 // Initialize everyone state with temples and scores
 everyone.state = {temples:temples, scores:scores};
@@ -300,6 +320,13 @@ everyone.now.addName = function(newName) {
     everyone.now.receiveTempleStatus(null, everyone.state);
   }
 };
+
+everyone.now.reset = function () {
+  initTemples();
+  initScores();
+  everyone.state = {temples:temples, scores:scores};
+  everyone.now.receiveTempleStatus(null, everyone.state);
+}
 
 
 // create a fast lookup Trie for matching partial words

@@ -50,6 +50,7 @@
       e.preventDefault();
       showTab('chat');
     });
+
     $('#play').click(function(e) {
       e.preventDefault();
       showTab('play');
@@ -62,6 +63,10 @@
       $('div.results').removeClass('hide');
       $('div.play').removeClass('hide');
       $('div.chat').removeClass('hide');
+    });
+
+    $('#reset').click(function(e){
+      now.reset();
     });
 
 
